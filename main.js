@@ -18,8 +18,7 @@ const senWithPics = senators.map(senator => {
 
 let pictureDiv = document.querySelector('#senator-container');
 
-senWithPics.forEach(senator => {
-    //Insert image and figcaption into the figure element
+let createCard = (senator) => {
     let senatorPic = document.createElement('img')
     let senatorFig = document.createElement('figure')
     let senatorCap = document.createElement('figcaption')
@@ -30,4 +29,14 @@ senWithPics.forEach(senator => {
     senatorFig.appendChild(senatorPic)
     senatorFig.appendChild(senatorCap)
     pictureDiv.appendChild(senatorFig)
+}
+
+senWithPics.forEach(senator => {
+    createCard(senator)
 })
+
+let republicanButton = document.querySelector('#republican-button')
+let democratButton = document.querySelector('#democrat-button')
+
+
+
